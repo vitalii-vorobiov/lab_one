@@ -47,16 +47,24 @@ def write_films(film_list):
     """
     with open("result.txt", "w") as f:
         for item in film_list:
-            f.write("Country: {} - Number of films: {}".format(item[0], item[1]))
+            f.write("Country: {} | Number of films: {}".format(item[0], item[1]))
             f.write("\n")
     return None
 
 def main(path, year):
-    f = read_file(path)
-    dictionary = country_dict(f, year)
-    lst = country_num(dictionary)
-    write_films(lst)
-    return None
+    """
+    (str, int) -> (None)
+    Main function of the program. Contain calls of another functions
+    """
+    try:
+        assert (type(year) is int)
+        assert (year >= 0)
+        f = read_file(path)
+        dictionary = country_dict(f, year)
+        lst = country_num(dictionary)
+        write_films(lst)
+    except AssertionError:
+        print("Something went wrong. You caught an Error :D")
 
 
-main("countries.list", 2014)
+main("countries.list", 2007)
