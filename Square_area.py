@@ -52,16 +52,16 @@ def main():
     Main function where binar search works
     """
     a,b,c,e = read_input()
-    check_triangle(a,b,c)
-    left = 0
-    right = a
-    while True:
-        x = (left + right)/2
-        if found(a,b,c,x,e) == 'ok':
-            break
-        elif found(a,b,c,x,e) == "smaller":
-            left = x
-        else:
-            right = x
-    print(x)
+    if check_triangle(a,b,c):
+        left = 0
+        right = a
+        while True:
+            x = (left + right)/2
+            if found(a,b,c,x,e) == 'ok':
+                break
+            elif found(a,b,c,x,e) == "smaller":
+                left = x
+            else:
+                right = x
+        print(x)
 main()
