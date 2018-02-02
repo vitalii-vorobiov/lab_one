@@ -29,7 +29,7 @@ def check_triangle(a,b,c):
     Function to check if triangle exist
     (float,float,float) -> boolean
     """
-    if (a + b > c) or (b + c > a) or (c + a > b):
+    if (a + b < c) or (b + c < a) or (c + a < b):
         return False
     return True
 def found(a,b,c,x,e):
