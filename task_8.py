@@ -13,7 +13,7 @@ def recursion(n, m):
     """
     try:
         return 'Input whole positive numbers!' if n <= 0 or m <= 0 else n**m \
-        if n == 1 else n**m + recursion(n-1,m)
+        if n == 1 else n**m + recursion(n-1, m)
     except TypeError:
         return 'Input whole positive numbers!'
 
