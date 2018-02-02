@@ -3,7 +3,7 @@ def read_file(path):
     (str) -> (list)
     Return list of lines from file that starts with key symbols
     """
-    with open(path) as f:
+    with open(path,encoding = "utf-8",errors = "ignore") as f:
         lst = [line.strip()for line in f if line.startswith(("NOVL", "BOOK", "ADPT"))]
     return lst
 
